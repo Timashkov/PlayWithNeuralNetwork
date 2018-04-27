@@ -1,0 +1,7 @@
+rootProject.name = 'nn-project'
+
+include ':common'
+include ':jvm-app'
+include ':jvm'
+include ':js'
+include ':js-app'

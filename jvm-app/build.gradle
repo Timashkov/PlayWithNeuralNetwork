@@ -1,0 +1,12 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    compile project(':jvm')
+    compile libraries.kotlin_stdlib
+}
+
+task run(dependsOn: classes, type: JavaExec) {
+    main = 'jvm.JvmAppKt'
+    classpath = sourceSets.main.runtimeClasspath
+    ignoreExitValue(true)
+}

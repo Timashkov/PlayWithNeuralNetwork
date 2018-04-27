@@ -1,0 +1,18 @@
+apply plugin: 'kotlin-platform-jvm'
+
+archivesBaseName = 'nn-project-jvm'
+
+dependencies {
+    expectedBy project(':common')
+    compile libraries.kotlin_stdlib
+    testCompile libraries.kotlin_test_junit
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.kotlin
+}
+
+artifacts {
+    archives sourcesJar
+}
