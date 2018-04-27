@@ -16,17 +16,14 @@ fun Matrix<Double>.T(): Matrix<Double> {
 fun Matrix<Double>.dot(b: Matrix<Double>): Matrix<Double> {
     var minSize = this[0].size
     if (this[0].size > b.size) {
-        println("a.size = ${this[0].size} b.size = ${b.size}")
         minSize = b.size
     }
     val res = Array(this.size, { Array(b[0].size, { 0.0 }) })
 
     for (ai in 0 until this.size) {
         for (bj in 0 until b[0].size) {
-            println()
             for (k in 0 until minSize) {
                 val m = this[ai][k] * b[k][bj]
-//                    print(" $m ")
                 res[ai][bj] += m
             }
         }
